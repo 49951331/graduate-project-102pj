@@ -1,0 +1,153 @@
+% TPCU 碩士學位論文 LaTex 樣板
+% 使用 utf-8 編碼
+% v0.5 (Jun. 30, 2012)
+% by Peter
+
+\documentclass[a4paper,12pt]{report}
+
+
+% 引用必要的套件
+\usepackage{tpcu}ls
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage[english]{babel}
+\usepackage{blindtext}
+
+%\usepackage{chap_last}
+
+\usepackage{xcolor,tikz}
+%\usepackage[usenames,dvipsnames,pdftex]{xcolor}
+%\def\pgfsysdriver{pgfsys-dvipdfmx.def}
+%\usepackage{tikz,ifthen}
+
+\newcommand{\newchapter}[1]{%
+    \chapter{#1}
+%   \pagestyle{fancy}
+    \thispagestyle{fancy}
+%   \fancyhead[LO,RE]{\slshape \leftmark}
+    \fancyhead[LE,RO]{\slshape \leftmark}
+    \fancyfoot[C]{\thepage}
+%   \fontsize{16}{20}\selectfont
+}
+%\usepackage{CJKnumb} %%% ZZZ %%% for Chinese numbering capability
+%\usepackage[nospace]{cite}  % for smart citation
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  end of preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% define the title
+\begin{document}
+
+\large 
+\fontsize{14}{20}\selectfont
+\input{frontpage}
+% generates the cover page
+% 不使用預設的 title 
+
+%\maketitle
+
+%\fontsize{14}{20}\selectfont
+%\setlength{\baselineskip}{24pt}
+% insert the table of contents
+%\tableofcontents
+%\listoffigures
+%\listoftables
+
+%\input{chapter12345}
+\input{chapter}
+% \input{chapter2}
+% \input{chapter3}
+% \input{chapter4}
+% \input{chapter5}
+
+%\input{chap_last}
+
+%%% 參考文獻
+\newpage
+\baselineskip=20pt
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameRef}
+\renewcommand{\bibname}{\protect\makebox[5cm][s]{\nameRef}}
+%  \makebox{} is fragile; need protect
+\bibliographystyle{ieeetr}  % 使用 IEEE Trans 期刊格式
+%\bibliography{my_bib}
+
+\begin{thebibliography}{1}
+\bibitem{a-comparison-of-mvx-framework}
+A Comparison of Angular, Backbone, CanJS and Ember, http://sporto.github.io/blog/2013/04/12/comparison-angular-backbone-can-ember/, [Online; accessed Jun-17-2013]. 
+
+\bibitem{html-as-it-should-be}
+AngularJS - HTML as it should be, https://www.slidecaptain.com/flows/5176d0f60b42f0ed700007f4 [Online; accessed Jun-27-2013]. 
+
+\bibitem{angularjs.org}
+AngularJS by Google, http://angularjs.org/, [Online; accessed Jun-17-2013]. 
+
+\bibitem{AngularJS-is-MVW}
+AngularJS to be MVW framework, https://plus.google.com/+AngularJS/posts/aZNVhj355G2, [Online; accessed Jun-07-2013]. 
+
+\bibitem{wiki-AngularJS}
+AngularJS, http://en.wikipedia.org/wiki/AngularJS, [Online; accessed Jun-07-2013]. 
+
+\bibitem{paper: webapp using mvc}
+Avraham Leff and James T. Rayfield, "Web-Application Development Using the ModelNiewlController Design Pattern", Fifth IEEE International Conference on Enterprise Distributed Object Computing, 2001, pp 118-127. 
+
+\bibitem{CodeIgniter}
+CodeIgniter, https://zh.wikipedia.org/wiki/CodeIgniter, [Online; accessed Jun-27-2013]. 
+
+\bibitem{CodeIgniter-Flow-Chart}
+CodeIgniter Application Flow Chart, http://ellislab.com/codeigniter/user-guide/overview/appflow.html, [Online; accessed Jun-27-2013]. 
+
+\bibitem{Codeigniter-Tutorial}
+Codeigniter Tutorial, http://www.revillwebdesign.com/codeigniter-tutorial/, [Online; accessed Jun-17-2013]. 
+
+\bibitem{data-binding-in-angular}
+Data Binding in Angular, http://docs.angularjs.org/guide/dev\_guide.templates.databinding, [Online; accessed Jun-17-2013]. 
+
+\bibitem{Data-binding}
+Data-binding, http://en.wikipedia.org/wiki/Data\_binding, [Online; accessed Jun-17-2013]. 
+
+\bibitem{wiki-back-and-front-end}
+Front and back ends, http://en.wikipedia.org/wiki/Front\_and\_back\_ends, [Online; accessed Jun-17-2013]. 
+
+\bibitem{wiki-git}
+Git, https://en.wikipedia.org/wiki/Git\_(software), [Online; accessed Jun-17-2013]. 
+
+\bibitem{site: github}
+Github, https://github.com/, [Online; accessed Jun-17-2013]. 
+
+\bibitem{JavaScript}
+JavaScript, https://zh.wikipedia.org/wiki/JavaScript, [Online; accessed Jun-17-2013]. 
+
+\bibitem{paper-MVP-for-C-Java}
+M. Potel. "MVP: Model-View-Presenter — The Taligent Programming Model for C++ and Java", Taligent, Inc, 1996, 16 pages. 
+
+\bibitem{wiki-MVC}
+MVC, http://zh.wikipedia.org/wiki/MVC, [Online; accessed Jun-17-2013]. 
+
+\bibitem{MVP-MVC-MVVM}
+MVP, MVC, MVVM, 傻傻分不清楚, http://www.dotblogs.com.tw/regionbbs/archive/2011/09/29/compare.to.mvp.mvc.mvvm.aspx, [Online; accessed Jun-17-2013] 
+
+\bibitem{wiki-MVVM}
+MVVM, http://en.wikipedia.org/wiki/Model\_View\_ViewModel, [Online; accessed Jun-17-2013]. 
+
+\bibitem{MVC-history}
+Model View Controller History, ParcPlace(move from Xerox Parc), http://c2.com/cgi/wiki?ModelViewControllerHistory, [Online; accessed Jun-17-2013]. 
+
+\bibitem{wiki-php}
+PHP, https://zh.wikipedia.org/zh-tw/PHP, [Online; accessed Jun-17-2013]. 
+
+\bibitem{book: JavaScript Patterns}
+Stoyan Stefanov, "JavaScript Patterns", O'Reilly Media, September 28, 2010. 
+
+\bibitem{cookbook-using-MVC}
+lenn E. Krasner and Stephen T. Pope, "A cookbook for using the model-view controller user interface paradigm in smalltalk-80", Journal Of Object Oriented Programming, vol.1 Issue 3, pp.26-49, Aug./Sept 1988. 
+
+\bibitem{wiki-web-programming}
+動態網頁, https://zh.wikipedia.org/wiki/動態網頁, [Online; accessed Jun-17-2013]. 
+\end{thebibliography}
+
+
+\clearpage
+%\end{CJK}
+\end{document}

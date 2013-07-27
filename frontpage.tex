@@ -1,0 +1,436 @@
+%
+% 使用 utf-8 編碼
+% v1.0 (2013.07.17)
+% do not change the content of this file
+% unless the thesis layout rule is changed
+% 無須修改本檔內容，除非校方修改了
+% 封面、書名頁、中文摘要、英文摘要、誌謝、目錄、表目錄、圖目錄、程式碼目錄符號說明
+% 等頁之格式
+
+% make the line spacing in effect
+\renewcommand{\baselinestretch}{\mybaselinestretch}
+\large % it needs a font size changing command to be effective
+
+% default variables definitions
+% 此處預設值，請依照需求更改此處
+\newcommand\cTitle{學生證照管理系統}
+%\newcommand\eTitle{MY THESIS TITLE}
+\newcommand\advisorCnameA{林慶昌 博士}
+%\newcommand\advisorEnameA{Dr. Ching-Chang Lin}
+\newcommand\univCname{臺北城市大學}
+%\newcommand\univEname{Taipei Chengshih University of Science and Technology}
+\newcommand\deptCname{資訊管理系}
+%\newcommand\deptEname{Information Management}
+\newcommand\cYear{102}
+\newcommand\cMonth{12}
+\newcommand\cDay{20}
+% 設定班級,學生姓名
+\newcommand\className{四資三忠}
+\newcommand\idA{49951363} \newcommand\userA{陳信華(組長)}
+\newcommand\idB{49951308} \newcommand\userB{曹詩敏}
+\newcommand\idC{49951329} \newcommand\userC{陳廉忠}
+\newcommand\idD{49951331} \newcommand\userD{黃柏崴}
+\newcommand\idE{49951362} \newcommand\userE{林揚評}
+
+% 使用 hyperref 在 pdf 簡介欄裡填入相關資料
+\ifx\hypersetup\undefined
+	\relax  % do nothing
+\else
+	\hypersetup{
+	pdftitle=\cTitle,
+%	pdfauthor=\myCname
+}
+\fi
+	
+
+\newcommand\itsempty{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       TPCU cover 封面
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\begin{titlepage}
+% no page number
+% next page will be page 1
+
+% aligned to the center of the page
+\begin{center}
+% font size (relative to 12 pt):
+% \large (14pt) < \Large (18pt) < \LARGE (20pt) < \huge (24pt)< \Huge (24 pt)
+%
+\makebox[13cm][s]{\Huge{\univCname\deptCname}}\\  %顯示中文校名
+\vspace{2cm}
+%\makebox[12cm][s]{\Huge{\deptCname}}\\ %顯示中文系所名
+%\vspace{1.5cm}
+\makebox[8cm][s]{\Huge{\cYear 學年度專題製作}}\\
+\vspace{3cm}
+%
+% Set the line spacing to single for the titles (to compress the lines)
+\renewcommand{\baselinestretch}{1}   %行距 1 倍
+%\large % it needs a font size changing command to be effective
+%\Large{\cTitle}\\  % 中文題目
+\fontsize{20}{22}\selectfont{\cTitle} \\
+\vspace{3cm}
+%\Large{\eTitle}\\ %英文題目
+%\fontsize{20}{22}\selectfont{\eTitle} \\
+
+指導老師: \advisorCnameA \\[2cm]
+
+%\hspace{-8.4cm} \makebox[3cm][s]{班級：四資三篤}  \\[0.3cm]
+%學生：學號：\idA 姓名：\userA \\[0.3cm]
+%　　　學號：\idB 姓名：\userB \\[0.3cm]
+%　　　學號：\idC 姓名：\userC \\[0.3cm]
+%　　　學號：\idD 姓名：\userD \\[0.3cm]
+%　　　學號：\idE 姓名：\userE \\
+\begin{tabular}{ll}
+班級：\className & \\[0.3cm]
+學號：\idA & 姓名：\userA \\[0.3cm]
+學號：\idB & 姓名：\userB \\[0.3cm]
+學號：\idC & 姓名：\userC \\[0.3cm]
+學號：\idD & 姓名：\userD \\[0.3cm]
+學號：\idE & 姓名：\userE \\[0.3cm]
+\end{tabular}
+
+%\vspace{4cm}
+% \makebox is a text box with specified width;
+% option s: stretch
+% use \makebox to make sure
+\vfill
+\makebox[10cm][s]{\Large{中華民國 \cYear 年 \cMonth 月 \cDay 日}}%
+%
+\end{center}
+% Resume the line spacing to the desired setting
+\renewcommand{\baselinestretch}{\mybaselinestretch}   %恢復原設定
+% it needs a font size changing command to be effective
+% restore the font size to normal
+\normalsize
+\end{titlepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  TPCU Side Page 論文的書背
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Command to generate the side page.
+\setCJKfamilyfont{heivert}[Vertical=RotatedGlyphs]{微軟正黑體}
+% 解決 中英文混何直排時，英文太靠右的問題
+\newcommand*\CJKmovesymbol[1]{\raise.35em\hbox{#1}}
+%\newcommand*\CJKmovesymbol2[1]{\raise.65em\hbox{#1}}
+\newcommand*\CJKmove{\punctstyle{plain}% do not modify the spacing between punctuations
+  \let\CJKsymbol\CJKmovesymbol
+  \let\CJKpunctsymbol\CJKsymbol
+}
+
+\begin{center}
+\thispagestyle{empty}
+\CJKfamily{heivert}\CJKmove
+\fontsize{14}{14}\selectfont
+\noindent\rotatebox{-90}{
+\begin{tabular}{
+	m{2cm}m{0.1cm}m{14cm}m{0.1cm}m{2.5cm}m{0.1cm}m{2.5cm}}
+\rotatebox{90}{\hspace{-0.45em}\cYear} 學年度 & & 
+\cTitle & & \deptCname & & 四技部
+\end{tabular}
+}
+\end{center}
+
+%% 從摘要到本文之前的部份以小寫羅馬數字印頁碼
+% 但是從「書名頁」(但不印頁碼) 就開始計算
+\setcounter{page}{1}
+\pagenumbering{roman}
+% 目前送出空白頁
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       論文口試委員審定書 (計頁碼，但不印頁碼)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% insert the printed standard form when the thesis is ready to bind
+% 在口試完成後，再將已簽名的審定書放入以便裝訂
+% create an entry in table of contents for 審定書
+
+\thispagestyle{EmptyWaterMarkPage}  % 無 header，但在浮水印模式下會有浮水印
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameCommitteeForm}%
+\begin{center}
+\fontsize{20}{14}\selectfont
+% font size (relative to 12 pt):
+% \large (14pt) < \Large (18pt) < \LARGE (20pt) < \huge (24pt)< \Huge (24 pt)
+%
+\makebox[13cm][s]{\Huge{\univCname\deptCname}}\\  %顯示中文校名
+\vspace{1cm}
+%\makebox[12cm][s]{\Huge{\deptCname}}\\ %顯示中文系所名
+%\vspace{1cm}
+\makebox[8cm][s]{\Huge{\cYear 學年度專題製作}}\\
+\vspace{1cm}
+%
+% Set the line spacing to single for the titles (to compress the lines)
+\renewcommand{\baselinestretch}{1}   %行距 1 倍
+%\hspace{-8.4cm} \makebox[3cm][s]{班級：四資三篤}  \\[0.3cm]
+%學生：學號：\idA 姓名：\userA \\[0.3cm]
+%　　　學號：\idB 姓名：\userB \\[0.3cm]
+%　　　學號：\idC 姓名：\userC \\[0.3cm]
+%　　　學號：\idD 姓名：\userD \\[0.3cm]
+%　　　學號：\idE 姓名：\userE \\[0.3cm]
+
+\begin{tabular}{ll}
+班級：\className & \\[0.3cm]
+學號：\idA & 姓名：\userA \\[0.3cm]
+學號：\idB & 姓名：\userB \\[0.3cm]
+學號：\idC & 姓名：\userC \\[0.3cm]
+學號：\idD & 姓名：\userD \\[0.3cm]
+學號：\idE & 姓名：\userE \\[0.3cm]
+\end{tabular}
+
+\hspace{-8.4cm} \makebox[3cm][s]{所撰之專題製作報告：}\\[0.3cm]
+
+\uline{\cTitle}  \\[0.6cm]
+
+\hspace{-8.4cm} \makebox[3cm][s]{經本委員會審查通過} \\[0.5cm]
+
+指導老師：\rule{0.4\textwidth}{1pt} \\[0.3cm]
+審查委員：\rule{0.4\textwidth}{1pt} \\[0.3cm]
+審查委員：\rule{0.4\textwidth}{1pt} \\[0.3cm]
+審查委員：\rule{0.4\textwidth}{1pt} \\[0.3cm]
+審查委員：\rule{0.4\textwidth}{1pt} \\[0.3cm]
+系主任  ：\rule{0.4\textwidth}{1pt} \\[0.3cm]
+
+%\vspace{4cm}
+% \makebox is a text box with specified width;
+% option s: stretch
+% use \makebox to make sure
+\vfill
+\makebox[10cm][s]{\Large{中華民國 \cYear 年 \cMonth 月 \cDay 日}}%
+%
+\end{center}
+
+\clearpage
+\normalsize
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       授權書 (計頁碼，但不印頁碼)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{EmptyWaterMarkPage}  % 無 header，但在浮水印模式下會有浮水印
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{使用同意書}%
+\begin{center}
+\fontsize{20}{14}\selectfont
+% font size (relative to 12 pt):
+% \large (14pt) < \Large (18pt) < \LARGE (20pt) < \huge (24pt)< \Huge (24 pt)
+%
+\makebox[13cm][c]{\Huge{使用同意書}}\\  %顯示中文校名
+\vspace{1.5cm}
+\raggedright
+茲同意吾等所製之專題製作和其報告： \\[0.8cm]
+
+\centerline{\uline{\cTitle}}
+
+
+%\makebox[12cm][l]{
+%\begin{minipage}
+\raggedright
+提供給臺北城市科技大學資管系作為資料參考、作品展示暨繼續延伸研究之用。
+
+\centering 
+
+%}
+%\makebox[12cm][s]{\Huge{\deptCname}}\\ %顯示中文系所名
+%\vspace{1.5cm}
+%\makebox[8cm][s]{\Huge{102學年度專題製作}}\\
+\vspace{1.5cm}
+%
+% Set the line spacing to single for the titles (to compress the lines)
+\renewcommand{\baselinestretch}{1}   %行距 1 倍
+
+學號：\idA 姓名：\rule{0.3\textwidth}{1pt} (簽名) \\[0.7cm]
+學號：\idB 姓名：\rule{0.3\textwidth}{1pt} (簽名) \\[0.7cm]
+學號：\idC 姓名：\rule{0.3\textwidth}{1pt} (簽名) \\[0.7cm]
+學號：\idD 姓名：\rule{0.3\textwidth}{1pt} (簽名) \\[0.7cm]
+學號：\idE 姓名：\rule{0.3\textwidth}{1pt} (簽名) \\[0.7cm]
+
+\vspace{2cm}
+指導老師：\rule{0.4\textwidth}{1pt} \\[0.3cm]
+
+
+%\vspace{4cm}
+% \makebox is a text box with specified width;
+% option s: stretch
+% use \makebox to make sure
+\vfill
+\makebox[10cm][s]{\Large{中華民國 \cYear 年 \cMonth 月 \cDay 日}}%
+%
+\end{center}
+\clearpage
+\normalsize
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       授權書 (計頁碼，但不印頁碼)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% insert the printed standard form when the thesis is ready to bind
+% 在口試完成後，再將已簽名的授權書放入以便裝訂
+% create an entry in table of contents for 授權書
+% 目前送出空白頁
+\newpage%
+
+%\vspace{3cm}
+
+提醒:
+
+上一頁為「論文口試委員審定書」, 在口試完成後，再將已簽名的審定書，先掃描成電子檔，以 Adobe PDF Writer 插入置換上頁，更新電子檔，同時並放入論文紙本以便裝訂。
+
+\vspace{2cm}
+
+此頁為「論文授權書」，計頁碼，但不印頁碼，在口試完成後，再將已簽名的授權書之後，替換本頁以便裝訂。
+{\thispagestyle{empty}%
+%\phantomsection % for hyperref to register this
+%\addcontentsline{toc}{chapter}{\nameCopyrightForm}%
+\mbox{}\clearpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       中文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\newpage
+\thispagestyle{plain}  % 無 header，但在浮水印模式下會有浮水印
+% create an entry in table of contents for 中文摘要
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameCabstract}
+
+% aligned to the center of the page
+\begin{center}
+% font size (relative to 12 pt):
+% \large (14pt) < \Large (18pt) < \LARGE (20pt) < \huge (24pt)< \Huge (24 pt)
+% Set the line spacing to single for the names (to compress the lines)
+\renewcommand{\baselinestretch}{1}   %行距 1 倍
+% it needs a font size changing command to be effective
+%\large{\cTitle}\\  %中文題目
+%\vspace{0.83cm}
+% \makebox is a text box with specified width;
+% option s: stretch
+% use \makebox to make sure
+% each text field occupies the same width
+%\makebox[1.5cm][s]{\large{學生：}}
+%\makebox[3cm][l]{\large{\myCname}} %學生中文姓名
+%\hfill
+%
+%\makebox[3cm][s]{\large{指導教授：}}
+%\makebox[3cm][l]{\large{\advisorCnameA}} \\ %教授A中文姓名
+%
+%\vfill
+\makebox[2.5cm][s]{\large{摘要}}\\
+\end{center}
+% Resume the line spacing to the desired setting
+\renewcommand{\baselinestretch}{\mybaselinestretch}   %恢復原設定
+%it needs a font size changing command to be effective
+% restore the font size to normal
+\normalsize
+\input{my_cabstract.tex}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       英文摘要
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\thispagestyle{plain}  % 無 header，但在浮水印模式下會有浮水印
+% create an entry in table of contents for 英文摘要
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameEabstract}
+
+% aligned to the center of the page
+\begin{center}
+% font size:
+% \large (14pt) < \Large (18pt) < \LARGE (20pt) < \huge (24pt)< \Huge (24 pt)
+% Set the line spacing to single for the names (to compress the lines)
+\renewcommand{\baselinestretch}{1}   %行距 1 倍
+%\large % it needs a font size changing command to be effective
+%\large{\eTitle}\\  %英文題目
+%\vspace{0.83cm}
+% \makebox is a text box with specified width;
+% option s: stretch
+% use \makebox to make sure
+% each text field occupies the same width
+%\makebox[2cm][s]{\large{Student: }}
+%\makebox[5cm][l]{\large{\myEname}} %學生英文姓名
+%\hfill
+\large{ABSTRACT}\\
+%\vspace{0.5cm}
+\end{center}
+% Resume the line spacing the desired setting
+\renewcommand{\baselinestretch}{\mybaselinestretch}   %恢復原設定
+%\large %it needs a font size changing command to be effective
+% restore the font size to normal
+\normalsize
+%%%%%%%%%%%%%
+\input{my_eabstract.tex}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       誌謝
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Acknowledgment
+\chapter*{\protect\makebox[5cm][s]{\nameAckn}} %\makebox{} is fragile; need protect
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameAckn}
+\input{my_acknowledgement.tex}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       目錄
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Table of contents
+\renewcommand{\contentsname}{\protect\makebox[5cm][s]{\nameToc}}
+
+%\makebox{} is fragile; need protect
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameToc}
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       表目錄
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% List of Tables
+\newpage
+\renewcommand{\listtablename}{\protect\makebox[5cm][s]{\nameLot}}
+%\makebox{} is fragile; need protect
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameLot}
+%\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       圖目錄
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% List of Figures
+\newpage
+\renewcommand{\listfigurename}{\protect\makebox[5cm][s]{\nameTof}}
+%\makebox{} is fragile; need protect
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{\nameTof}
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+%\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       程式碼 lstlistoflistings 目錄
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% List of Figures
+\newpage
+\renewcommand{\lstlistlistingname}{\protect\makebox[5cm][s]{程式碼目錄}}
+%\makebox{} is fragile; need protect
+\phantomsection % for hyperref to register this
+\addcontentsline{toc}{chapter}{程式碼目錄}
+\renewcommand{\numberline}[1]{程式碼~#1\hspace*{1em}}
+%\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+\lstlistoflistings
+
+\newpage
+%% 論文本體頁碼回復為阿拉伯數字計頁，並從頭起算
+\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

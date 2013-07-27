@@ -1,0 +1,34 @@
+% 設定 LaTex 的中文目錄
+% http://minsky.pixnet.net/blog/post/26804386-latex-%E7%9A%84%E4%B8%AD%E6%96%87%E7%9B%AE%E9%8C%84
+\usepackage{titletoc}
+\renewcommand\contentsname{目錄}
+\renewcommand\listfigurename{圖目錄}
+\renewcommand\listtablename{表目錄}
+\renewcommand\tablename{表}
+\renewcommand\figurename{圖}
+\renewcommand{\listfigurename}{圖} 
+\renewcommand\lstlistingname{程式碼}
+\addto\captionsenglish{\renewcommand{\figurename}{圖}}
+\addto\captionsenglish{\renewcommand{\tablename}{表}}
+%\addto\captionsenglish{\renewcommand{\figurename}{Fig.}}
+\newcommand{\loflabel}{圖}
+\newcommand{\lotlabel}{表}
+\newcommand{\nameRef}{參考文獻}
+\renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+%\renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+
+\titlecontents{chapter}
+[0em]
+{}
+{第\CJKnumber{\thecontentslabel}章~~}
+{}{\titlerule*{.}\contentspage}
+\titlecontents{section}
+[4em]
+{}
+{\contentslabel{2em}}
+{}{\titlerule*{.} \contentspage}
+\titlecontents{subsection}
+[8em]
+{}
+{\contentslabel{3em}}
+{}{\titlerule*{.} \contentspage}

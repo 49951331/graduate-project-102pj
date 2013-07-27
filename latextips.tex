@@ -1,0 +1,51 @@
+\chapter{\LaTeX 排版技巧}
+
+  \section{程式碼展示}
+
+這裡介紹在 \LaTeX 中，如何將程式碼的呈現方式。
+
+研究自行開發的程式庫(Layout Library) ..... 如 \ref{list:sample1}
+
+    \noindent \begin{minipage}[t]{1\textwidth} \lstinputlisting[language=tex,
+      caption={程式碼模式展示}, 
+      label=list:sample1]
+      {code/sample.html}
+    \end{minipage}
+
+  \section{\LaTeX 的表格製作}
+
+這裡介紹在 \LaTeX 中，如何呈現表格。
+
+建立一個指定寬的的表格，如表 \ref{tab:table1} 所示。
+
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:table1}指定寬度與高度的表格}
+\begin{tabular}{|p{3cm}|p{3cm}|}
+\hline
+格子 1 & 格子 2 \\[1cm]
+\hline
+\multicolumn{2}{|l|}{格子 3} \\[2cm]
+\hline
+格子 4 & 格子 5 \\[1cm]
+\hline
+\end{tabular}
+\end{table}
+
+建立一個表格內容置中，合併儲存格，如表 \ref{tab:table1} 所示。
+
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:table2}表格內容置中，合併儲存格}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{Multi-Row} &
+\multicolumn{2}{c|}{Multi-Column} &
+\multicolumn{2}{c|}{\multirow{2}{*}{Multi-Row and Col}} \\
+\cline{2-3}
+  & column-1 & column-2 & \multicolumn{2}{c|}{} \\
+\hline
+label-1 & label-2 & label-3 & label-4 & label-5 \\
+\hline
+\end{tabular}
+\end{table}
